@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const menus = [
@@ -41,9 +41,12 @@ export default function HomePage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-gray-600 text-lg leading-relaxed">{desc}</p>
-              <Button asChild size="lg" className="w-full text-lg">
-                <Link href={href}>바로가기</Link>
-              </Button>
+              <Link
+                href={href}
+                className={buttonVariants({ size: "lg", className: "w-full text-lg" })}
+              >
+                바로가기
+              </Link>
             </CardContent>
           </Card>
         ))}
